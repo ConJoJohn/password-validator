@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    /*
     public void UIPasswordValidator(View view) {
         TextView passwordValidity = (TextView) findViewById(R.id.passwordValidity);
         EditText passwordText = (EditText) findViewById(R.id.passwordText);
@@ -42,5 +43,5 @@ public class MainActivity extends AppCompatActivity {
         } else {
             passwordValidity.setText("This password is acceptable.");
         }
-    }
+    }*/
 }
