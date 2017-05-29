@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public static String passwordValidator(String password) {
-        if (password.equals("password")) {
+        if (password.toLowerCase().equals("password")) {
             return "Password cannot be \"password\"!";
         } else if (password.length() < 8) {
             return "Password must be at least 8 characters!";
