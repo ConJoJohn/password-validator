@@ -16,10 +16,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public static String passwordValidator(String password) {
-        if (password.toLowerCase().equals("password")) {
-            return "Password cannot be \"password\"!";
-        } else if (password.length() < 8) {
-            return "Password must be at least 8 characters!";
+        if (password.toLowerCase().equals("password") || password.toLowerCase().equals("notpassword")) {
+            return "Password cannot be \"password\" or \"notpassword\"!";
+        } else if (password.length() < 8 || password.length () > 15) {
+            return "Password must be between 8 and 15 characters!";
+        } else if (!password.matches(".*\\d+.*")) {
+            return "Password must contain at least 1 number!";
         } else {
             return "This password is acceptable.";
         }
