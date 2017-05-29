@@ -27,18 +27,20 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /*
-    public void passwordValidator(View view) {
-        TextView passwordValidity = (TextView) findViewById(R.id.passwordValidity);
-        EditText password = (EditText) findViewById(R.id.password);
 
-        if (password.equals("password")) {
-            passwordValidity.setText("Password cannot be \"password\"!");
-        } else if (password.length() < 8) {
-            passwordValidity.setText("Password must be at least 8 characters!");
+    public void UIPasswordValidator(View view) {
+        TextView passwordValidity = (TextView) findViewById(R.id.passwordValidity);
+        EditText passwordText = (EditText) findViewById(R.id.passwordText);
+        String password = passwordText.getText().toString();
+
+        if (password.toLowerCase().equals("password") || password.toLowerCase().equals("notpassword")) {
+            passwordValidity.setText("Password cannot be \"password\" or \"notpassword\"!");
+        } else if (password.length() < 8 || password.length () > 15) {
+            passwordValidity.setText("Password must be between 8 and 15 characters!");
+        } else if (!password.matches(".*\\d+.*")) {
+            passwordValidity.setText("Password must contain at least 1 number!");
         } else {
             passwordValidity.setText("This password is acceptable.");
         }
     }
-    */
 }
